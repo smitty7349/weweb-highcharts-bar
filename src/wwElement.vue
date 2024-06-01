@@ -1,22 +1,55 @@
 <template>
   <div class="my-element">
-    <p :style="textStyle">I am a custom element !</p>
+    <div ref="mainRef">Loading chart...</div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    content: { type: Object, required: true },
-  },
-  computed: {
-    textStyle() {
-      return {
-        color: this.content.textColor,
-      };
+<script setup>
+import { computed, ref, onMounted } from "vue"
+import Highcharts from "highcharts"
+
+const props = defineProps({
+  content: { type: Object, required: true },
+})
+
+const mainRef = ref(null)
+
+const textStyle = computed(() => {
+  return {
+    color: props.content.textColor,
+  }
+})
+
+const chart = ref(null)
+onMounted(() => {
+  console.log("mainRef.value :", mainRef.value)
+  chart.value = Highcharts.chart(mainRef.value, {
+    chart: {
+      type: "bar",
     },
-  },
-};
+    title: {
+      text: "Fruit Consumption",
+    },
+    xAxis: {
+      categories: ["Apples", "Bananas", "Oranges"],
+    },
+    yAxis: {
+      title: {
+        text: "Fruit eaten",
+      },
+    },
+    series: [
+      {
+        name: "Jane",
+        data: [1, 0, 4],
+      },
+      {
+        name: "John",
+        data: [5, 7, 3],
+      },
+    ],
+  })
+})
 </script>
 
 <style lang="scss" scoped>

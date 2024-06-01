@@ -1,7 +1,7 @@
 export default {
   editor: {
     label: {
-      en: "My Element",
+      en: "Highcharts Bar Chart",
     },
   },
   properties: {
@@ -13,4 +13,4 @@ export default {
       defaultValue: "#F23636",
     },
   },
-};
+}
