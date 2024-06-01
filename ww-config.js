@@ -13,5 +13,13 @@ export default {
       defaultValue: "Fruit Consumption",
       responsive: true,
     },
+    subtitle: {
+      label: {
+        en: "Subtitle",
+      },
+      type: "Text",
+      defaultValue: "by fruit",
+      responsive: true,
+    },
   },
 }

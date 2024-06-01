@@ -27,6 +27,9 @@ onMounted(() => {
     title: {
       text: props.content.title,
     },
+    subtitle: {
+      text: props.content.subtitle,
+    },
     xAxis: {
       categories: ["Apples", "Bananas", "Oranges"],
     },
@@ -52,12 +55,9 @@ const chartTitle = computed(() => props.content.title)
 watch(chartTitle, (newVal) => {
   chart.value?.title.update({ text: newVal })
 })
-</script>
 
-<style lang="scss" scoped>
-.my-element {
-  p {
-    font-size: 18px;
-  }
-}
-</style>
+const chartSubtitle = computed(() => props.content.subtitle)
+watch(chartSubtitle, (newVal) => {
+  chart.value?.subtitle.update({ text: newVal })
+})
+</script>
