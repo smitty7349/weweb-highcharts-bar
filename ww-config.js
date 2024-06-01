@@ -5,12 +5,13 @@ export default {
     },
   },
   properties: {
-    textColor: {
+    title: {
       label: {
-        en: "Text color",
+        en: "Title",
       },
-      type: "Color",
-      defaultValue: "#F23636",
+      type: "Text",
+      defaultValue: "Fruit Consumption",
+      responsive: true,
     },
   },
 }

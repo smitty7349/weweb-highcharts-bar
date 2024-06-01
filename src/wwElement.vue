@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from "vue"
+import { computed, ref, onMounted, watch } from "vue"
 import Highcharts from "highcharts"
 
 const props = defineProps({
@@ -14,12 +14,9 @@ const props = defineProps({
 
 const mainRef = ref(null)
 
-const textStyle = computed(() => {
-  return {
-    color: props.content.textColor,
-  }
-})
-
+/**
+ * @type {{ value: Highcharts.Chart|null }}
+ */
 const chart = ref(null)
 onMounted(() => {
   console.log("mainRef.value :", mainRef.value)
@@ -28,7 +25,7 @@ onMounted(() => {
       type: "bar",
     },
     title: {
-      text: "Fruit Consumption",
+      text: props.content.title,
     },
     xAxis: {
       categories: ["Apples", "Bananas", "Oranges"],
@@ -49,6 +46,11 @@ onMounted(() => {
       },
     ],
   })
+})
+
+const chartTitle = computed(() => props.content.title)
+watch(chartTitle, (newVal) => {
+  chart.value?.title.update({ text: newVal })
 })
 </script>
 
