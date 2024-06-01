@@ -12,6 +12,7 @@ export default {
       type: "Text",
       defaultValue: "Fruit Consumption",
       responsive: true,
+      bindable: true,
     },
     subtitle: {
       label: {
@@ -20,6 +21,7 @@ export default {
       type: "Text",
       defaultValue: "by fruit",
       responsive: true,
+      bindable: true,
     },
     series: {
       label: {
