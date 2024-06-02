@@ -42,11 +42,15 @@ watch(chartSubtitle, (newVal) => {
   chart.value?.subtitle.update({ text: newVal })
 })
 
+const xAxisTitle = computed(() => props.content.xAxisTitle)
+watch(xAxisTitle, refreshChart)
 const xAxisCategories = computed(() => props.content.xAxisCategories)
 watch(xAxisCategories, refreshChart, { deep: true })
 
 const yAxisTitle = computed(() => props.content.yAxisTitle)
 watch(yAxisTitle, refreshChart)
+const yAxisCategories = computed(() => props.content.yAxisCategories)
+watch(yAxisCategories, refreshChart, { deep: true })
 
 const highchartsOptions = reactive({
   chart: {
@@ -59,12 +63,16 @@ const highchartsOptions = reactive({
     text: chartSubtitle,
   },
   xAxis: {
+    title: {
+      text: xAxisTitle,
+    },
     categories: xAxisCategories,
   },
   yAxis: {
     title: {
       text: yAxisTitle,
     },
+    categories: yAxisCategories,
   },
   series: seriesWithKeys,
 })

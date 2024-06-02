@@ -3,7 +3,11 @@ export default {
     label: {
       en: "Highcharts Bar Chart",
     },
-    customSettingsPropertiesOrder: [["series", "seriesLabelKey", "seriesDataKey"], ["xAxisCategories"], ["yAxisTitle"]],
+    customSettingsPropertiesOrder: [
+      ["series", "seriesLabelKey", "seriesDataKey"],
+      ["xAxisTitle", "xAxisCategories"],
+      ["yAxisTitle", "yAxisCategories"],
+    ],
   },
   properties: {
     title: {
@@ -83,6 +87,16 @@ export default {
         return { object: series[0] }
       },
     },
+    xAxisTitle: {
+      label: {
+        en: "X Axis Title",
+      },
+      type: "Text",
+      defaultValue: "",
+      responsive: true,
+      bindable: true,
+      section: "settings",
+    },
     xAxisCategories: {
       label: {
         en: "X Axis Categories",
@@ -100,7 +114,7 @@ export default {
       /** wwEditor:start */
       bindingValidation: {
         type: "array",
-        tooltip: "An array of x-axis categories: `['Apples', 'Bananas', 'Oranges']`",
+        tooltip: "An array of x-axis categories: e.g. `['Apples', 'Bananas', 'Oranges']`",
       },
       /** wwEditor:end */
     },
@@ -113,6 +127,27 @@ export default {
       responsive: true,
       bindable: true,
       section: "settings",
+    },
+    yAxisCategories: {
+      label: {
+        en: "Y Axis Categories",
+      },
+      type: "Array",
+      defaultValue: [],
+      options: {
+        item: {
+          type: "Text",
+        },
+      },
+      responsive: true,
+      bindable: true,
+      section: "settings",
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "array",
+        tooltip: "An array of y-axis categories: e.g. `[0, 5, 10]`",
+      },
+      /** wwEditor:end */
     },
   },
 }
