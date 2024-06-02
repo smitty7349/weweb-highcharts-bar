@@ -16,6 +16,10 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### 0.1.5
+
+- Invert x and y axis
+
 ### 0.1.4
 
 - Editable x-axis title
@@ -41,3 +45,20 @@ Before release, you can check build error by running `npm run build --name=highc
 
 - First version
 - Support for basic editing of title
+
+## Requirements
+
+- Title
+- xAxis
+- yAxis
+- Responsive
+- Series
+- noData
+- Loading
+- Legend
+- Credits
+- Colors array
+- Chart
+- Caption
+- Tooltip
+- Drilldown

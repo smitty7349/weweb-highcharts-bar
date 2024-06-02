@@ -3,6 +3,7 @@ export default {
     label: {
       en: "Highcharts Bar Chart",
     },
+    customStylesPropertiesOrder: ["title", "subtitle", "inverted"],
     customSettingsPropertiesOrder: [
       ["series", "seriesLabelKey", "seriesDataKey"],
       ["xAxisTitle", "xAxisCategories"],
@@ -25,6 +26,15 @@ export default {
       },
       type: "Text",
       defaultValue: "by fruit",
+      responsive: true,
+      bindable: true,
+    },
+    inverted: {
+      label: {
+        en: "Inverted",
+      },
+      type: "OnOff",
+      defaultValue: false,
       responsive: true,
       bindable: true,
     },

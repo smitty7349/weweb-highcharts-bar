@@ -42,6 +42,9 @@ watch(chartSubtitle, (newVal) => {
   chart.value?.subtitle.update({ text: newVal })
 })
 
+const chartInverted = computed(() => props.content.inverted)
+watch(chartInverted, refreshChart)
+
 const xAxisTitle = computed(() => props.content.xAxisTitle)
 watch(xAxisTitle, refreshChart)
 const xAxisCategories = computed(() => props.content.xAxisCategories)
@@ -54,7 +57,7 @@ watch(yAxisCategories, refreshChart, { deep: true })
 
 const highchartsOptions = reactive({
   chart: {
-    type: "bar",
+    type: computed(() => (chartInverted.value ? "column" : "bar")),
   },
   title: {
     text: chartTitle,
