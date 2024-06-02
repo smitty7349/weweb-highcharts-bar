@@ -49,16 +49,72 @@ Before release, you can check build error by running `npm run build --name=highc
 ## Requirements
 
 - Title
+  - align
+  - floating
+  - margin
+  - style
 - xAxis
+  - title ✔️
+  - categories ✔️
+  - allowDecimals
+  - max
+  - min
+  - reversed
 - yAxis
+  - title ✔️
+  - categories ✔️
+  - allowDecimals
+  - max
+  - min
+  - reversed
 - Responsive
+  - Bind code directly
 - Series
+  - Color
+  - Border color / radius / width
+  - Center in category
+  - dataLabels
+  - dataSorting
+  - data as separate thing?
+  - events?...
+  - label?
+  - opacity
 - noData
 - Loading
+  - Weird. We have to call `chart.showLoading()` and `chart.hideLoading()` manually. Does weweb offer a way to do this from other events or something?
 - Legend
+  - align
+  - backgroundColor
+  - borderColor
+  - borderRadius
+  - borderWidth
+  - floating
+  - labelFormat
+  - layout
+  - title
+  - verticalAlign
 - Credits
+  - enabled
 - Colors array
 - Chart
+  - backgroundColor
+  - borderColor
+  - borderRadius
+  - borderWidth
+  - events?...
+  - margin
+  - plot?...
+    - backgroundColor
+    - borderColor
+    - borderWidth
+    - shadow
 - Caption
 - Tooltip
+  - backgroundColor
+  - borderColor
+  - borderRadius
+  - borderWidth
+  - distance
+  - enabled
 - Drilldown
+  - Should probably be flat code for now, as it is a complex feature (it basically adds another chart)
