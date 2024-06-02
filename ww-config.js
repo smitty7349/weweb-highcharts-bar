@@ -3,6 +3,7 @@ export default {
     label: {
       en: "Highcharts Bar Chart",
     },
+    customSettingsPropertiesOrder: [["series", "seriesLabelKey", "seriesDataKey"], ["xAxisCategories"]],
   },
   properties: {
     title: {
