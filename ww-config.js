@@ -57,21 +57,31 @@ export default {
       label: {
         en: "Series Label Key",
       },
-      type: "Text",
-      defaultValue: "name",
+      type: "ObjectPropertyPath",
+      defaultValue: "['name']",
       responsive: true,
       bindable: true,
       section: "settings",
+      options: (content) => {
+        const series = (!content.series || Array.isArray(content.series) ? content.series : content.series.series) || []
+        if (!Array.isArray(series) || !series[0]) return null
+        return { object: series[0] }
+      },
     },
     seriesDataKey: {
       label: {
         en: "Series Value Key",
       },
-      type: "Text",
-      defaultValue: "data",
+      type: "ObjectPropertyPath",
+      defaultValue: "['data']",
       responsive: true,
       bindable: true,
       section: "settings",
+      options: (content) => {
+        const series = (!content.series || Array.isArray(content.series) ? content.series : content.series.series) || []
+        if (!Array.isArray(series) || !series[0]) return null
+        return { object: series[0] }
+      },
     },
     xAxisCategories: {
       label: {

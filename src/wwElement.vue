@@ -24,8 +24,8 @@ const seriesLabelKey = computed(() => props.content.seriesLabelKey)
 const seriesDataKey = computed(() => props.content.seriesDataKey)
 const seriesWithKeys = computed(() =>
   series.value.map((s) => ({
-    name: s[seriesLabelKey.value],
-    data: s[seriesDataKey.value],
+    name: _.get(s, seriesLabelKey.value),
+    data: _.get(s, seriesDataKey.value),
   }))
 )
 
