@@ -16,6 +16,12 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### 0.1.4
+
+- Editable x-axis title
+- Editable y-axis categories
+- Allow using object UI to pick series' label and value keys
+
 ### 0.1.3
 
 - Editable series label key and value key
