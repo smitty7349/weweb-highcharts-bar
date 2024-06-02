@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, watch } from "vue"
+import { computed, ref, onMounted, watch, reactive } from "vue"
 import Highcharts from "highcharts"
 
 const props = defineProps({
@@ -18,30 +18,19 @@ const mainRef = ref(null)
  * @type {{ value: Highcharts.Chart|null }}
  */
 const chart = ref(null)
-const series = ref(props.content.series || [])
-const defaultHighchartsOptions = ref({
-  chart: {
-    type: "bar",
-  },
-  title: {
-    text: props.content.title,
-  },
-  subtitle: {
-    text: props.content.subtitle,
-  },
-  xAxis: {
-    categories: ["Apples", "Bananas", "Oranges"],
-  },
-  yAxis: {
-    title: {
-      text: "Fruit eaten",
-    },
-  },
-  series,
-})
-onMounted(() => {
-  chart.value = Highcharts.chart(mainRef.value, defaultHighchartsOptions.value)
-})
+const series = computed(() => props.content.series || [])
+
+const seriesLabelKey = computed(() => props.content.seriesLabelKey)
+const seriesDataKey = computed(() => props.content.seriesDataKey)
+const seriesWithKeys = computed(() =>
+  series.value.map((s) => ({
+    name: s[seriesLabelKey.value],
+    data: s[seriesDataKey.value],
+  }))
+)
+
+watch(() => [seriesLabelKey.value, seriesDataKey.value], refreshChart, { deep: true })
+watch(seriesWithKeys, refreshChart, { deep: true })
 
 const chartTitle = computed(() => props.content.title)
 watch(chartTitle, (newVal) => {
@@ -53,15 +42,32 @@ watch(chartSubtitle, (newVal) => {
   chart.value?.subtitle.update({ text: newVal })
 })
 
-const chartSeries = computed(() => props.content.series)
-watch(
-  chartSeries,
-  (newVal) => {
-    chart.value = Highcharts.chart(mainRef.value, {
-      ...defaultHighchartsOptions.value,
-      series: newVal,
-    })
+const xAxisCategories = computed(() => props.content.xAxisCategories)
+watch(xAxisCategories, refreshChart, { deep: true })
+
+const highchartsOptions = reactive({
+  chart: {
+    type: "bar",
   },
-  { deep: true }
-)
+  title: {
+    text: chartTitle,
+  },
+  subtitle: {
+    text: chartSubtitle,
+  },
+  xAxis: {
+    categories: xAxisCategories,
+  },
+  yAxis: {
+    title: {
+      text: "Fruit eaten",
+    },
+  },
+  series: seriesWithKeys,
+})
+onMounted(refreshChart)
+function refreshChart() {
+  chart.value?.destroy()
+  chart.value = Highcharts.chart(mainRef.value, highchartsOptions)
+}
 </script>

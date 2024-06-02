@@ -52,5 +52,46 @@ export default {
       },
       /* wwEditor:end */
     },
+    seriesLabelKey: {
+      label: {
+        en: "Series Label Key",
+      },
+      type: "Text",
+      defaultValue: "name",
+      responsive: true,
+      bindable: true,
+      section: "settings",
+    },
+    seriesDataKey: {
+      label: {
+        en: "Series Value Key",
+      },
+      type: "Text",
+      defaultValue: "data",
+      responsive: true,
+      bindable: true,
+      section: "settings",
+    },
+    xAxisCategories: {
+      label: {
+        en: "X Axis Categories",
+      },
+      type: "Array",
+      defaultValue: ["Apples", "Bananas", "Oranges"],
+      options: {
+        item: {
+          type: "Text",
+        },
+      },
+      responsive: true,
+      bindable: true,
+      section: "settings",
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "array",
+        tooltip: "An array of x-axis categories: `['Apples', 'Bananas', 'Oranges']`",
+      },
+      /** wwEditor:end */
+    },
   },
 }
