@@ -45,6 +45,9 @@ watch(chartSubtitle, (newVal) => {
 const xAxisCategories = computed(() => props.content.xAxisCategories)
 watch(xAxisCategories, refreshChart, { deep: true })
 
+const yAxisTitle = computed(() => props.content.yAxisTitle)
+watch(yAxisTitle, refreshChart)
+
 const highchartsOptions = reactive({
   chart: {
     type: "bar",
@@ -60,7 +63,7 @@ const highchartsOptions = reactive({
   },
   yAxis: {
     title: {
-      text: "Fruit eaten",
+      text: yAxisTitle,
     },
   },
   series: seriesWithKeys,

@@ -3,7 +3,7 @@ export default {
     label: {
       en: "Highcharts Bar Chart",
     },
-    customSettingsPropertiesOrder: [["series", "seriesLabelKey", "seriesDataKey"], ["xAxisCategories"]],
+    customSettingsPropertiesOrder: [["series", "seriesLabelKey", "seriesDataKey"], ["xAxisCategories"], ["yAxisTitle"]],
   },
   properties: {
     title: {
@@ -93,6 +93,16 @@ export default {
         tooltip: "An array of x-axis categories: `['Apples', 'Bananas', 'Oranges']`",
       },
       /** wwEditor:end */
+    },
+    yAxisTitle: {
+      label: {
+        en: "Y Axis Title",
+      },
+      type: "Text",
+      defaultValue: "Fruit eaten",
+      responsive: true,
+      bindable: true,
+      section: "settings",
     },
   },
 }
