@@ -57,3 +57,75 @@ export const seriesDataKey = {
     return { object: series[0] }
   },
 }
+export const seriesColor = {
+  label: {
+    en: "Series Color",
+  },
+  type: "Color",
+  defaultValue: "#007bff",
+  responsive: true,
+  bindable: true,
+  section: "settings",
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "string",
+    tooltip: "The color of the series",
+  },
+  /* wwEditor:end */
+}
+export const seriesBorderColor = {
+  label: {
+    en: "Series Border Color",
+  },
+  type: "Color",
+  defaultValue: "#007bff",
+  responsive: true,
+  bindable: true,
+  section: "settings",
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "string",
+    tooltip: "The border color of the series",
+  },
+  /* wwEditor:end */
+}
+export const seriesBorderWidth = {
+  label: {
+    en: "Series Border Width",
+  },
+  type: "Number",
+  defaultValue: 0,
+  responsive: true,
+  bindable: true,
+  section: "settings",
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "number",
+    tooltip: "The border width of the series",
+  },
+  /* wwEditor:end */
+}
+export const seriesBorderRadius = {
+  label: {
+    en: "Series Border Radius",
+  },
+  type: "Length",
+  options: {
+    unitChoices: [
+      { value: "px", label: "px" },
+      { value: "em", label: "em" },
+      { value: "rem", label: "rem" },
+      { value: "%", label: "%" },
+    ],
+  },
+  defaultValue: "6px",
+  responsive: true,
+  bindable: true,
+  section: "settings",
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "number",
+    tooltip: "The border radius of the series",
+  },
+  /* wwEditor:end */
+}

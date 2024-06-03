@@ -1,5 +1,13 @@
 import { inverted, subtitle, title, titleAlign, titleFloating } from "./ww-config/chartOptions"
-import { series, seriesDataKey, seriesLabelKey } from "./ww-config/seriesOptions"
+import {
+  series,
+  seriesBorderColor,
+  seriesBorderRadius,
+  seriesBorderWidth,
+  seriesColor,
+  seriesDataKey,
+  seriesLabelKey,
+} from "./ww-config/seriesOptions"
 import { xAxisCategories, xAxisMax, xAxisMaxOn, xAxisTitle } from "./ww-config/xAxisOptions"
 import { yAxisCategories, yAxisMax, yAxisMaxOn, yAxisTitle } from "./ww-config/yAxisOptions"
 
@@ -8,9 +16,14 @@ export default {
     label: {
       en: "Highcharts Bar Chart",
     },
-    customStylesPropertiesOrder: [["title", "titleAlign", "titleFloating"], "subtitle", "inverted"],
+    customStylesPropertiesOrder: [
+      ["title", "titleAlign", "titleFloating"],
+      "subtitle",
+      "inverted",
+      "seriesDisplaySettings",
+    ],
     customSettingsPropertiesOrder: [
-      ["series", "seriesLabelKey", "seriesDataKey"],
+      ["series", "seriesLabelKey", "seriesDataKey", "seriesSettings"],
       ["xAxisTitle", "xAxisCategories", "xAxisMaxOn", "xAxisMax"],
       ["yAxisTitle", "yAxisCategories", "yAxisMaxOn", "yAxisMax"],
     ],
@@ -24,6 +37,34 @@ export default {
     series,
     seriesDataKey,
     seriesLabelKey,
+    seriesSettings: {
+      label: {
+        en: "Series display settings",
+      },
+      type: "Array",
+      options: {
+        item: {
+          type: "Object",
+          options: {
+            item: {
+              seriesColor,
+              seriesBorderWidth,
+              seriesBorderColor,
+              seriesBorderRadius,
+            },
+          },
+        },
+      },
+      defaultValue: [],
+      responsive: true,
+      bindable: true,
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "array",
+        tooltip: "An array of objects specifying settings for each series",
+      },
+      /** wwEditor:end */
+    },
     xAxisTitle,
     xAxisCategories,
     xAxisMaxOn,

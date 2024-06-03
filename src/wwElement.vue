@@ -1,5 +1,5 @@
 <template>
-  <div class="my-element">
+  <div class="highcharts-bar">
     <div ref="mainRef">Loading chart...</div>
   </div>
 </template>
