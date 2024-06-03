@@ -260,6 +260,7 @@ export default {
         tooltip: "The maximum value of the y-axis (e.g. `10`)",
       },
       /** wwEditor:end */
+      hidden: (content) => !content.yAxisMaxOn,
     },
     responsiveRules: {
       label: {
