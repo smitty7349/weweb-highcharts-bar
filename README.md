@@ -19,6 +19,7 @@ Before release, you can check build error by running `npm run build --name=highc
 ### 0.1.7
 
 - Add X and Y Axis max options
+- Add Responsive Rules option
 
 ### 0.1.6
 
