@@ -16,6 +16,10 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### 0.1.7
+
+- Add X and Y Axis max options
+
 ### 0.1.6
 
 - Add title align and floating options
