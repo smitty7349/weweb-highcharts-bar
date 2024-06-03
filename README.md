@@ -16,6 +16,10 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### 0.1.8
+
+- Add series color & border settings
+
 ### 0.1.7
 
 - Add X and Y Axis max options
@@ -80,8 +84,8 @@ Before release, you can check build error by running `npm run build --name=highc
 - Responsive
   - Bind code directly ✔️
 - Series
-  - Color
-  - Border color / radius / width
+  - Color ✔️
+  - Border color / radius / width ✔️
   - Center in category
   - dataLabels
   - dataSorting
