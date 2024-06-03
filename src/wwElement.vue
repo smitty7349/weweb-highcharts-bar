@@ -97,10 +97,27 @@ watch(yAxisMaxOn, (newVal) => {
 const yAxisMax = computed(() => props.content.yAxisMax)
 watch(yAxisMax, refreshChart)
 
+const responsiveRules = computed(() => props.content.responsiveRules)
+watch(responsiveRules, refreshChart)
+const responsiveRulesIsValid = computed(() => {
+  return (
+    responsiveRules.value?.length &&
+    responsiveRules.value.every((rule) => {
+      return (
+        "chartOptions" in rule &&
+        "condition" in rule &&
+        typeof rule.chartOptions == "object" &&
+        typeof rule.condition == "object"
+      )
+    })
+  )
+})
+
 const highchartsOptions = reactive({
   chart: {
     type: computed(() => (chartInverted.value ? "column" : "bar")),
   },
+  series: seriesWithKeys,
   title: {
     text: chartTitle,
     align: chartTitleAlign,
@@ -123,11 +140,17 @@ const highchartsOptions = reactive({
     categories: yAxisCategories,
     max: yAxisMax,
   },
-  series: seriesWithKeys,
+  responsive: {
+    rules: computed(() => (responsiveRulesIsValid.value ? responsiveRules.value : [])),
+  },
 })
 onMounted(refreshChart)
 function refreshChart() {
-  chart.value?.destroy()
+  try {
+    chart.value?.destroy()
+  } catch (e) {
+    console.error(e)
+  }
   chart.value = Highcharts.chart(mainRef.value, highchartsOptions)
 }
 </script>

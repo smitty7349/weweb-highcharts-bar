@@ -261,5 +261,25 @@ export default {
       },
       /** wwEditor:end */
     },
+    responsiveRules: {
+      label: {
+        en: "Responsive rules",
+      },
+      type: "Info",
+      defaultValue: null,
+      responsive: true,
+      bindable: true,
+      section: "settings",
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "array",
+        tooltip:
+          "An array of objects specifying new chart options to put in place under certain conditions" +
+          "\nLike this: \n" +
+          "`[{ chartOptions: {...}, condition: {...}}, {}...]`\n" +
+          "See https://api.highcharts.com/highcharts/responsive.rules",
+      },
+      /** wwEditor:end */
+    },
   },
 }
