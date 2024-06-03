@@ -36,6 +36,10 @@ const chartTitle = computed(() => props.content.title)
 watch(chartTitle, (newVal) => {
   chart.value?.title.update({ text: newVal })
 })
+const chartTitleAlign = computed(() => props.content.titleAlign)
+watch(chartTitleAlign, (newVal) => {
+  chart.value?.title.update({ align: newVal })
+})
 
 const chartSubtitle = computed(() => props.content.subtitle)
 watch(chartSubtitle, (newVal) => {
@@ -61,6 +65,7 @@ const highchartsOptions = reactive({
   },
   title: {
     text: chartTitle,
+    align: chartTitleAlign,
   },
   subtitle: {
     text: chartSubtitle,

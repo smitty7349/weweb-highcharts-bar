@@ -20,6 +20,22 @@ export default {
       responsive: true,
       bindable: true,
     },
+    titleAlign: {
+      label: {
+        en: "Title Align",
+      },
+      type: "TextRadioGroup",
+      defaultValue: "center",
+      options: {
+        choices: [
+          { value: "left", icon: "align-left" },
+          { value: "center", icon: "align-center" },
+          { value: "right", icon: "align-right" },
+        ],
+      },
+      responsive: true,
+      bindable: true,
+    },
     subtitle: {
       label: {
         en: "Subtitle",

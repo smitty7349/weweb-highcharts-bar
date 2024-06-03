@@ -49,7 +49,8 @@ Before release, you can check build error by running `npm run build --name=highc
 ## Requirements
 
 - Title
-  - align
+  - text ✔️
+  - align ✔️
   - floating
   - margin
   - style
