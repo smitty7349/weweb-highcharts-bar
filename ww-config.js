@@ -3,7 +3,7 @@ export default {
     label: {
       en: "Highcharts Bar Chart",
     },
-    customStylesPropertiesOrder: ["title", "subtitle", "inverted"],
+    customStylesPropertiesOrder: [["title", "titleAlign", "titleFloating"], "subtitle", "inverted"],
     customSettingsPropertiesOrder: [
       ["series", "seriesLabelKey", "seriesDataKey"],
       ["xAxisTitle", "xAxisCategories"],
@@ -35,6 +35,27 @@ export default {
       },
       responsive: true,
       bindable: true,
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "string",
+        tooltip: "The alignment of the title `'left'`, `'center'`, or `'right'`",
+      },
+      /** wwEditor:end */
+    },
+    titleFloating: {
+      label: {
+        en: "Title Floating",
+      },
+      type: "OnOff",
+      defaultValue: false,
+      responsive: true,
+      bindable: true,
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "boolean",
+        tooltip: "Whether the title should float or not (`true` or `false`)",
+      },
+      /** wwEditor:end */
     },
     subtitle: {
       label: {
