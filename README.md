@@ -78,7 +78,7 @@ Before release, you can check build error by running `npm run build --name=highc
   - min
   - reversed
 - Responsive
-  - Bind code directly
+  - Bind code directly ✔️
 - Series
   - Color
   - Border color / radius / width
