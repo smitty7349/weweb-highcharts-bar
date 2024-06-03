@@ -12,6 +12,8 @@ const props = defineProps({
   content: { type: Object, required: true },
 })
 
+const emit = defineEmits(["update:content"])
+
 const mainRef = ref(null)
 
 /**
@@ -57,11 +59,43 @@ const xAxisTitle = computed(() => props.content.xAxisTitle)
 watch(xAxisTitle, refreshChart)
 const xAxisCategories = computed(() => props.content.xAxisCategories)
 watch(xAxisCategories, refreshChart, { deep: true })
+const xAxisMaxOn = computed(() => props.content.xAxisMaxOn)
+watch(xAxisMaxOn, (newVal) => {
+  if (newVal)
+    emit("update:content", {
+      ...props.content,
+      xAxisMax: Math.max(...seriesWithKeys.value.map((s) => s.data?.length - 1)),
+    })
+  else
+    emit("update:content", {
+      ...props.content,
+      xAxisMax: null,
+    })
+  refreshChart()
+})
+const xAxisMax = computed(() => props.content.xAxisMax)
+watch(xAxisMax, refreshChart)
 
 const yAxisTitle = computed(() => props.content.yAxisTitle)
 watch(yAxisTitle, refreshChart)
 const yAxisCategories = computed(() => props.content.yAxisCategories)
 watch(yAxisCategories, refreshChart, { deep: true })
+const yAxisMaxOn = computed(() => props.content.yAxisMaxOn)
+watch(yAxisMaxOn, (newVal) => {
+  if (newVal)
+    emit("update:content", {
+      ...props.content,
+      yAxisMax: Math.max(...seriesWithKeys.value.map((s) => s.data).flat()),
+    })
+  else
+    emit("update:content", {
+      ...props.content,
+      yAxisMax: null,
+    })
+  refreshChart()
+})
+const yAxisMax = computed(() => props.content.yAxisMax)
+watch(yAxisMax, refreshChart)
 
 const highchartsOptions = reactive({
   chart: {
@@ -80,12 +114,14 @@ const highchartsOptions = reactive({
       text: xAxisTitle,
     },
     categories: xAxisCategories,
+    max: xAxisMax,
   },
   yAxis: {
     title: {
       text: yAxisTitle,
     },
     categories: yAxisCategories,
+    max: yAxisMax,
   },
   series: seriesWithKeys,
 })

@@ -61,15 +61,15 @@ Before release, you can check build error by running `npm run build --name=highc
 - xAxis
   - title ✔️
   - categories ✔️
+  - max ✔️
   - allowDecimals
-  - max
   - min
   - reversed
 - yAxis
   - title ✔️
   - categories ✔️
+  - max ✔️
   - allowDecimals
-  - max
   - min
   - reversed
 - Responsive
