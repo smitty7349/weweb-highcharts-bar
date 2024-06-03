@@ -45,3 +45,4 @@ typings/
 .DS_STORE
 # we only use yarn lock
 myenv
+myenv/
