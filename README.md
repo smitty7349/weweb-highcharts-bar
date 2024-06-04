@@ -19,6 +19,8 @@ Before release, you can check build error by running `npm run build --name=highc
 ### next
 
 - Add chart background color and border color/radius/width settings
+- Add caption
+- Add tooltip enabled setting
 
 ### 0.1.9
 
@@ -103,7 +105,7 @@ Before release, you can check build error by running `npm run build --name=highc
   - dataLabels
   - dataSorting
   - data as separate thing?
-  - events?...
+  - events?... (click)
   - label?
   - opacity
 - noData ✔️
@@ -127,20 +129,20 @@ Before release, you can check build error by running `npm run build --name=highc
   - borderColor ✔️
   - borderRadius ✔️
   - borderWidth ✔️
-  - events?...
+  - events?... ❌ (it only has click on background, which doesn't seem useful to me)
   - margin
   - plot?...
     - backgroundColor
     - borderColor
     - borderWidth
     - shadow
-- Caption
+- Caption ✔️
 - Tooltip
+  - enabled ✔️
   - backgroundColor
   - borderColor
   - borderRadius
   - borderWidth
   - distance
-  - enabled
 - Drilldown
   - Should probably be flat code for now, as it is a complex feature (it basically adds another chart)

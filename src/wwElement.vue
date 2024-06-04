@@ -14,6 +14,7 @@ import useSeriesOptions from "./composables/useSeriesOptions"
 import useLegendOptions from "./composables/useLegendOptions"
 import NoDataToDisplay from "highcharts/modules/no-data-to-display"
 import Highcharts from "highcharts"
+import useTooltipOptions from "./composables/useTooltipOptions"
 NoDataToDisplay(Highcharts)
 
 export default {
@@ -65,6 +66,11 @@ export default {
     const defaultColors = computed(() => props.content.defaultColors)
     watch(defaultColors, refreshChart, { deep: true })
 
+    const caption = computed(() => props.content.caption)
+    watch(caption, refreshChart)
+
+    const { tooltipEnabled } = useTooltipOptions(props, refreshChart)
+
     const highchartsOptions = reactive({
       chart: {
         type: computed(() => (chartInverted.value ? "column" : "bar")),
@@ -84,6 +90,12 @@ export default {
         layout: legendLayout,
         backgroundColor: legendBackgroundColor,
         verticalAlign: "bottom",
+      },
+      caption: {
+        text: caption,
+      },
+      tooltip: {
+        enabled: tooltipEnabled,
       },
       xAxis: {
         title: {

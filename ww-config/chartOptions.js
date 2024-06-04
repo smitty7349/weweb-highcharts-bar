@@ -53,6 +53,15 @@ export const subtitle = {
   responsive: true,
   bindable: true,
 }
+export const caption = {
+  label: {
+    en: "Caption",
+  },
+  type: "Text",
+  defaultValue: "",
+  responsive: true,
+  bindable: true,
+}
 export const inverted = {
   label: {
     en: "Inverted",

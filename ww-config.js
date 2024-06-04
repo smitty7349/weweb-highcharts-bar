@@ -3,6 +3,7 @@ import {
   borderColor,
   borderRadius,
   borderWidth,
+  caption,
   inverted,
   subtitle,
   title,
@@ -19,6 +20,7 @@ import {
   seriesDataKey,
   seriesLabelKey,
 } from "./ww-config/seriesOptions"
+import { tooltipEnabled } from "./ww-config/tooltipOptions"
 import { xAxisCategories, xAxisMax, xAxisMaxOn, xAxisTitle } from "./ww-config/xAxisOptions"
 import { yAxisCategories, yAxisMax, yAxisMaxOn, yAxisTitle } from "./ww-config/yAxisOptions"
 
@@ -29,8 +31,9 @@ export default {
     },
     customStylesPropertiesOrder: [
       ["title", "titleAlign", "titleFloating"],
-      "subtitle",
+      ["subtitle", "caption"],
       "inverted",
+      "tooltipEnabled",
       ["chartBackgroundColor", "chartBorderColor", "chartBorderRadius", "chartBorderWidth"],
       "seriesDisplaySettings",
       ["legendAlign", "legendLayout", "legendBackgroundColor"],
@@ -46,6 +49,8 @@ export default {
     titleAlign,
     titleFloating,
     subtitle,
+    caption,
+    tooltipEnabled,
     inverted,
     chartBackgroundColor: backgroundColor,
     chartBorderColor: borderColor,
