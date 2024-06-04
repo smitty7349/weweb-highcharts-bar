@@ -16,7 +16,7 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
-### 0.1.9 (next)
+### 0.1.9
 
 - Add show/hide loading actions
 - Add legend align and background-color settings
