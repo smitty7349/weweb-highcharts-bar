@@ -163,6 +163,22 @@ export default {
     legendAlign,
     legendLayout,
     legendBackgroundColor,
+    drilldown: {
+      label: {
+        en: "Drilldown",
+      },
+      type: "Info",
+      defaultValue: null,
+      responsive: true,
+      bindable: true,
+      section: "settings",
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "object",
+        tooltip: "An object specifying drilldown options. See https://api.highcharts.com/highcharts/drilldown",
+      },
+      /** wwEditor:end */
+    },
   },
   actions: [
     {

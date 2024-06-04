@@ -72,6 +72,9 @@ export default {
     const { tooltipEnabled, tooltipBackgroundColor, tooltipBorderColor, tooltipBorderRadius, tooltipBorderWidth } =
       useTooltipOptions(props, refreshChart)
 
+    const drilldown = computed(() => props.content.drilldown)
+    watch(drilldown, refreshChart)
+
     const highchartsOptions = reactive({
       chart: {
         type: computed(() => (chartInverted.value ? "column" : "bar")),
@@ -122,6 +125,7 @@ export default {
       lang: {
         noData,
       },
+      drilldown,
     })
     onMounted(refreshChart)
 
