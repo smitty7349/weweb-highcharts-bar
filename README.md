@@ -16,6 +16,10 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### next
+
+- Add drilldown setting
+
 ### 0.1.10
 
 - Add chart background color and border color/radius/width settings
