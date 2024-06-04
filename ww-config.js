@@ -1,4 +1,5 @@
 import { inverted, subtitle, title, titleAlign, titleFloating } from "./ww-config/chartOptions"
+import { legendAlign, legendBackgroundColor, legendLayout } from "./ww-config/legendOptions"
 import {
   series,
   seriesBorderColor,
@@ -21,6 +22,7 @@ export default {
       "subtitle",
       "inverted",
       "seriesDisplaySettings",
+      ["legendAlign", "legendLayout", "legendBackgroundColor"],
     ],
     customSettingsPropertiesOrder: [
       ["series", "seriesLabelKey", "seriesDataKey", "seriesSettings"],
@@ -108,6 +110,9 @@ export default {
       },
       /** wwEditor:end */
     },
+    legendAlign,
+    legendLayout,
+    legendBackgroundColor,
   },
   actions: [
     {

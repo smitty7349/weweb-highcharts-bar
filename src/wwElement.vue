@@ -11,6 +11,7 @@ import useXAxisOptions from "./composables/useXAxisOptions"
 import useYAxisOptions from "./composables/useYAxisOptions"
 import useChart from "./composables/useChart"
 import useSeriesOptions from "./composables/useSeriesOptions"
+import useLegendOptions from "./composables/useLegendOptions"
 import NoDataToDisplay from "highcharts/modules/no-data-to-display"
 import Highcharts from "highcharts"
 NoDataToDisplay(Highcharts)
@@ -59,6 +60,8 @@ export default {
     const noData = computed(() => props.content.noData)
     watch(noData, refreshChart)
 
+    const { legendAlign, legendLayout, legendBackgroundColor } = useLegendOptions(props, chart)
+
     const highchartsOptions = reactive({
       chart: {
         type: computed(() => (chartInverted.value ? "column" : "bar")),
@@ -71,6 +74,12 @@ export default {
       },
       subtitle: {
         text: chartSubtitle,
+      },
+      legend: {
+        align: legendAlign,
+        layout: legendLayout,
+        backgroundColor: legendBackgroundColor,
+        verticalAlign: "bottom",
       },
       xAxis: {
         title: {

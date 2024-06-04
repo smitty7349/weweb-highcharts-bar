@@ -19,6 +19,7 @@ Before release, you can check build error by running `npm run build --name=highc
 ### 0.1.9 (next)
 
 - Add show/hide loading actions
+- Add legend align and background-color settings
 
 ### 0.1.8
 
@@ -99,11 +100,11 @@ Before release, you can check build error by running `npm run build --name=highc
   - events?...
   - label?
   - opacity
-- noData
+- noData ✔️
 - Loading ✔️
 - Legend
-  - align
-  - backgroundColor
+  - align ✔️
+  - backgroundColor ✔️
   - borderColor
   - borderRadius
   - borderWidth
