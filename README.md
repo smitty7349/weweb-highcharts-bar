@@ -21,6 +21,7 @@ Before release, you can check build error by running `npm run build --name=highc
 - Add chart background color and border color/radius/width settings
 - Add caption
 - Add tooltip enabled setting
+- Add tooltip background color, border color/radius/width
 
 ### 0.1.9
 
@@ -139,10 +140,10 @@ Before release, you can check build error by running `npm run build --name=highc
 - Caption ✔️
 - Tooltip
   - enabled ✔️
-  - backgroundColor
-  - borderColor
-  - borderRadius
-  - borderWidth
+  - backgroundColor ✔️
+  - borderColor ✔️
+  - borderRadius ✔️
+  - borderWidth ✔️
   - distance
 - Drilldown
   - Should probably be flat code for now, as it is a complex feature (it basically adds another chart)
