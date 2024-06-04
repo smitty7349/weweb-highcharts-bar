@@ -109,4 +109,14 @@ export default {
       /** wwEditor:end */
     },
   },
+  actions: [
+    {
+      label: "Show loading",
+      action: "showLoading",
+    },
+    {
+      label: "Hide loading",
+      action: "hideLoading",
+    },
+  ],
 }
