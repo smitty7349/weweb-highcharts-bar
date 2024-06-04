@@ -16,6 +16,10 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### next
+
+- Add chart background color and border color/radius/width settings
+
 ### 0.1.9
 
 - Add show/hide loading actions
@@ -119,10 +123,10 @@ Before release, you can check build error by running `npm run build --name=highc
   - enabled
 - Colors array ✔️
 - Chart
-  - backgroundColor
-  - borderColor
-  - borderRadius
-  - borderWidth
+  - backgroundColor ✔️
+  - borderColor ✔️
+  - borderRadius ✔️
+  - borderWidth ✔️
   - events?...
   - margin
   - plot?...
