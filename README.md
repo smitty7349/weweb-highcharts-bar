@@ -16,7 +16,7 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
-### next
+### 0.1.11
 
 - Add drilldown setting
 
