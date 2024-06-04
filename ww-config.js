@@ -36,6 +36,26 @@ export default {
     titleFloating,
     subtitle,
     inverted,
+    defaultColors: {
+      label: {
+        en: "Default colors",
+      },
+      type: "Array",
+      defaultValue: ["#7cb5ec", "#434348", "#90ed7d", "#f7a35c", "#8085e9"],
+      options: {
+        item: {
+          type: "Color",
+        },
+      },
+      responsive: true,
+      bindable: true,
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "array",
+        tooltip: "An array of colors to use for the series",
+      },
+      /** wwEditor:end */
+    },
     series,
     seriesDataKey,
     seriesLabelKey,

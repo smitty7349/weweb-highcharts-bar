@@ -62,10 +62,14 @@ export default {
 
     const { legendAlign, legendLayout, legendBackgroundColor } = useLegendOptions(props, chart)
 
+    const defaultColors = computed(() => props.content.defaultColors)
+    watch(defaultColors, refreshChart, { deep: true })
+
     const highchartsOptions = reactive({
       chart: {
         type: computed(() => (chartInverted.value ? "column" : "bar")),
       },
+      colors: defaultColors,
       series: seriesWithKeys,
       title: {
         text: chartTitle,

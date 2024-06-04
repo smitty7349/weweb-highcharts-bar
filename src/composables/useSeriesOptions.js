@@ -11,9 +11,15 @@ export default function useSeriesOptions(props, refreshChart) {
     return series.value.map((s, index) => ({
       name: _.get(s, labelKey.value),
       data: _.get(s, dataKey.value),
-      color: seriesDisplaySettings.value[index]?.seriesColor || "#007bff",
+      ...(seriesDisplaySettings.value[index]?.seriesColor
+        ? {
+            color: seriesDisplaySettings.value[index]?.seriesColor,
+          }
+        : {}),
       borderWidth: seriesDisplaySettings.value[index]?.seriesBorderWidth || 1,
-      borderColor: seriesDisplaySettings.value[index]?.seriesBorderColor || "#007bff",
+      ...(seriesDisplaySettings.value[index]?.seriesBorderColor && {
+        borderColor: seriesDisplaySettings.value[index]?.seriesBorderColor,
+      }),
       borderRadius: seriesDisplaySettings.value[index]?.seriesBorderRadius || 6,
     }))
   })
