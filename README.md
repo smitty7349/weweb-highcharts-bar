@@ -19,6 +19,7 @@ Before release, you can check build error by running `npm run build --name=highc
 ### 0.1.8
 
 - Add series color & border settings
+- Fix bug where only one chart would show
 
 ### 0.1.7
 
