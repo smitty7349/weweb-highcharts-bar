@@ -20,6 +20,7 @@ Before release, you can check build error by running `npm run build --name=highc
 
 - Add show/hide loading actions
 - Add legend align and background-color settings
+- Fix series color & border settings not working
 
 ### 0.1.8
 
