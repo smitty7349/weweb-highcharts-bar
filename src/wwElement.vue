@@ -69,7 +69,8 @@ export default {
     const caption = computed(() => props.content.caption)
     watch(caption, refreshChart)
 
-    const { tooltipEnabled } = useTooltipOptions(props, refreshChart)
+    const { tooltipEnabled, tooltipBackgroundColor, tooltipBorderColor, tooltipBorderRadius, tooltipBorderWidth } =
+      useTooltipOptions(props, refreshChart)
 
     const highchartsOptions = reactive({
       chart: {
@@ -96,6 +97,10 @@ export default {
       },
       tooltip: {
         enabled: tooltipEnabled,
+        backgroundColor: tooltipBackgroundColor,
+        borderColor: tooltipBorderColor,
+        borderRadius: tooltipBorderRadius,
+        borderWidth: tooltipBorderWidth,
       },
       xAxis: {
         title: {

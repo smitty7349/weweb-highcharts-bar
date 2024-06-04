@@ -20,7 +20,13 @@ import {
   seriesDataKey,
   seriesLabelKey,
 } from "./ww-config/seriesOptions"
-import { tooltipEnabled } from "./ww-config/tooltipOptions"
+import {
+  tooltipEnabled,
+  backgroundColor as tooltipBackgroundColor,
+  borderColor as tooltipBorderColor,
+  borderRadius as tooltipBorderRadius,
+  borderWidth as tooltipBorderWidth,
+} from "./ww-config/tooltipOptions"
 import { xAxisCategories, xAxisMax, xAxisMaxOn, xAxisTitle } from "./ww-config/xAxisOptions"
 import { yAxisCategories, yAxisMax, yAxisMaxOn, yAxisTitle } from "./ww-config/yAxisOptions"
 
@@ -51,6 +57,10 @@ export default {
     subtitle,
     caption,
     tooltipEnabled,
+    tooltipBackgroundColor,
+    tooltipBorderColor,
+    tooltipBorderRadius,
+    tooltipBorderWidth,
     inverted,
     chartBackgroundColor: backgroundColor,
     chartBorderColor: borderColor,
