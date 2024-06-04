@@ -11,6 +11,7 @@ import useXAxisOptions from "./composables/useXAxisOptions"
 import useYAxisOptions from "./composables/useYAxisOptions"
 import useChart from "./composables/useChart"
 import useSeriesOptions from "./composables/useSeriesOptions"
+import "highcharts/modules/no-data-to-display.js"
 
 const props = defineProps({
   content: { type: Object, required: true },
@@ -53,6 +54,9 @@ const responsiveRulesIsValid = computed(() => {
   )
 })
 
+const noData = computed(() => props.content.noData)
+watch(noData, refreshChart)
+
 const highchartsOptions = reactive({
   chart: {
     type: computed(() => (chartInverted.value ? "column" : "bar")),
@@ -82,6 +86,9 @@ const highchartsOptions = reactive({
   },
   responsive: {
     rules: computed(() => (responsiveRulesIsValid.value ? responsiveRules.value : [])),
+  },
+  lang: {
+    noData: "test",
   },
 })
 onMounted(refreshChart)

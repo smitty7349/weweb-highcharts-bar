@@ -93,5 +93,20 @@ export default {
       },
       /** wwEditor:end */
     },
+    noData: {
+      label: {
+        en: "No data message",
+      },
+      type: "Text",
+      defaultValue: "No data to display",
+      responsive: true,
+      bindable: true,
+      /** wwEditor:start */
+      bindingValidation: {
+        type: "string",
+        tooltip: "The message to display when there is no data",
+      },
+      /** wwEditor:end */
+    },
   },
 }
