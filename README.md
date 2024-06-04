@@ -100,8 +100,7 @@ Before release, you can check build error by running `npm run build --name=highc
   - label?
   - opacity
 - noData
-- Loading
-  - Weird. We have to call `chart.showLoading()` and `chart.hideLoading()` manually. Does weweb offer a way to do this from other events or something?
+- Loading ✔️
 - Legend
   - align
   - backgroundColor
