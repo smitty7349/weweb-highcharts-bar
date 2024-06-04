@@ -39,7 +39,7 @@ export default {
     series,
     seriesDataKey,
     seriesLabelKey,
-    seriesSettings: {
+    seriesDisplaySettings: {
       label: {
         en: "Series display settings",
       },
