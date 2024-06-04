@@ -1,4 +1,14 @@
-import { inverted, subtitle, title, titleAlign, titleFloating } from "./ww-config/chartOptions"
+import {
+  backgroundColor,
+  borderColor,
+  borderRadius,
+  borderWidth,
+  inverted,
+  subtitle,
+  title,
+  titleAlign,
+  titleFloating,
+} from "./ww-config/chartOptions"
 import { legendAlign, legendBackgroundColor, legendLayout } from "./ww-config/legendOptions"
 import {
   series,
@@ -21,6 +31,7 @@ export default {
       ["title", "titleAlign", "titleFloating"],
       "subtitle",
       "inverted",
+      ["chartBackgroundColor", "chartBorderColor", "chartBorderRadius", "chartBorderWidth"],
       "seriesDisplaySettings",
       ["legendAlign", "legendLayout", "legendBackgroundColor"],
     ],
@@ -36,6 +47,10 @@ export default {
     titleFloating,
     subtitle,
     inverted,
+    chartBackgroundColor: backgroundColor,
+    chartBorderColor: borderColor,
+    chartBorderRadius: borderRadius,
+    chartBorderWidth: borderWidth,
     defaultColors: {
       label: {
         en: "Default colors",

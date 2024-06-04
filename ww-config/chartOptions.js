@@ -62,3 +62,72 @@ export const inverted = {
   responsive: true,
   bindable: true,
 }
+
+export const backgroundColor = {
+  label: {
+    en: "Chart Background Color",
+  },
+  type: "Color",
+  defaultValue: "#ffffff",
+  responsive: true,
+  bindable: true,
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "string",
+    tooltip: "The color of the chart background",
+  },
+  /* wwEditor:end */
+}
+export const borderColor = {
+  label: {
+    en: "Chart Border Color",
+  },
+  type: "Color",
+  defaultValue: "#ffffff",
+  responsive: true,
+  bindable: true,
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "string",
+    tooltip: "The border color of the chart",
+  },
+  /* wwEditor:end */
+}
+export const borderWidth = {
+  label: {
+    en: "Chart Border Width",
+  },
+  type: "Number",
+  defaultValue: 0,
+  responsive: true,
+  bindable: true,
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "number",
+    tooltip: "The border width of the chart",
+  },
+  /* wwEditor:end */
+}
+export const borderRadius = {
+  label: {
+    en: "Chart Border Radius",
+  },
+  type: "Length",
+  options: {
+    unitChoices: [
+      { value: "px", label: "px" },
+      { value: "em", label: "em" },
+      { value: "rem", label: "rem" },
+      { value: "%", label: "%" },
+    ],
+  },
+  defaultValue: "6px",
+  responsive: true,
+  bindable: true,
+  /* wwEditor:start */
+  bindingValidation: {
+    type: "number",
+    tooltip: "The border radius of the chart",
+  },
+  /* wwEditor:end */
+}

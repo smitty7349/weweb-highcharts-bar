@@ -22,11 +22,35 @@ export default function useChartOptions(props, chart, refreshChart) {
   const chartInverted = computed(() => props.content.inverted)
   watch(chartInverted, refreshChart)
 
+  const chartBackgroundColor = computed(() => props.content.chartBackgroundColor)
+  watch(chartBackgroundColor, (newVal) => {
+    chart.value?.update({ chart: { backgroundColor: newVal } })
+  })
+
+  const chartBorderColor = computed(() => props.content.chartBorderColor)
+  watch(chartBorderColor, (newVal) => {
+    chart.value?.update({ chart: { borderColor: newVal } })
+  })
+
+  const chartBorderRadius = computed(() => props.content.chartBorderRadius)
+  watch(chartBorderRadius, (newVal) => {
+    chart.value?.update({ chart: { borderRadius: newVal } })
+  })
+
+  const chartBorderWidth = computed(() => props.content.chartBorderWidth)
+  watch(chartBorderWidth, (newVal) => {
+    chart.value?.update({ chart: { borderWidth: newVal } })
+  })
+
   return {
     chartTitle,
     chartTitleAlign,
     chartTitleFloating,
     chartSubtitle,
     chartInverted,
+    chartBackgroundColor,
+    chartBorderColor,
+    chartBorderRadius,
+    chartBorderWidth,
   }
 }
