@@ -16,6 +16,10 @@ Before release, you can check build error by running `npm run build --name=highc
 
 ## Changelog
 
+### 0.1.12
+
+- Fix drilldown setting not working
+
 ### 0.1.11
 
 - Add drilldown setting
