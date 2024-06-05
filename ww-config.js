@@ -168,7 +168,18 @@ export default {
         en: "Drilldown",
       },
       type: "Info",
-      defaultValue: null,
+      defaultValue: {
+        activeDataLabelStyle: {
+          cursor: "pointer",
+          color: "#003399",
+          fontWeight: "bold",
+        },
+        activeAxisLabelStyle: {
+          cursor: "pointer",
+          color: "#003399",
+          fontWeight: "bold",
+        },
+      },
       responsive: true,
       bindable: true,
       section: "settings",

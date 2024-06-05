@@ -12,10 +12,12 @@ import useYAxisOptions from "./composables/useYAxisOptions"
 import useChart from "./composables/useChart"
 import useSeriesOptions from "./composables/useSeriesOptions"
 import useLegendOptions from "./composables/useLegendOptions"
-import NoDataToDisplay from "highcharts/modules/no-data-to-display"
-import Highcharts from "highcharts"
 import useTooltipOptions from "./composables/useTooltipOptions"
+import NoDataToDisplay from "highcharts/modules/no-data-to-display"
+import Drilldown from "highcharts/modules/drilldown"
+import Highcharts from "highcharts"
 NoDataToDisplay(Highcharts)
+Drilldown(Highcharts)
 
 export default {
   props: {
@@ -72,7 +74,18 @@ export default {
     const { tooltipEnabled, tooltipBackgroundColor, tooltipBorderColor, tooltipBorderRadius, tooltipBorderWidth } =
       useTooltipOptions(props, refreshChart)
 
-    const drilldown = computed(() => props.content.drilldown)
+    const drilldown = computed(() => {
+      const d = props.content.drilldown
+      if (d) {
+        if (d.activeDataLabelStyle && d.activeAxisLabelStyle) return d
+        else {
+          if (!d.activeDataLabelStyle) d.activeDataLabelStyle = {}
+          if (!d.activeAxisLabelStyle) d.activeAxisLabelStyle = {}
+          return d
+        }
+      }
+      return { activeDataLabelStyle: {}, activeAxisLabelStyle: {} }
+    })
     watch(drilldown, refreshChart)
 
     const highchartsOptions = reactive({
